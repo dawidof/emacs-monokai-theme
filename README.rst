@@ -5,4 +5,4 @@ picked from Sublime monokai theme and modified.
 
 Theme is still under development.
 
-.. image:: images/monokai-2-theme.png
+.. image:: images/monokai-alt-theme.png

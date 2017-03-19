@@ -1,4 +1,4 @@
-;;; monokai-2-theme.el --- Theme with a dark background. Based on sublime monokai theme.
+;;; monokai-alt-theme.el --- Theme with a dark background. Based on sublime monokai theme.
 
 ;; Copyright (C) 2017, Dmytro Koval
 
@@ -28,7 +28,7 @@
 
 ;;; Code:
 
- (deftheme monokai-2)
+ (deftheme monokai-alt)
  (let ((class '((class color) (min-colors 89)))
        (fg1 "#f8f8f2")
        (fg2 "#bdbdb1")
@@ -50,7 +50,7 @@
        (var     "#f92672")
        (warning "#ff0000"))
    (custom-theme-set-faces
-   'monokai-2
+   'monokai-alt
         `(default ((,class (:background ,bg1 :foreground ,fg1))))
         `(font-lock-builtin-face ((,class (:foreground ,builtin))))
         `(font-lock-comment-face ((,class (:foreground ,comment))))
@@ -246,7 +246,7 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'monokai-2)
+(provide-theme 'monokai-alt)
 
 ;; Local Variables:
 ;; no-byte-compile: t
@@ -254,4 +254,4 @@
 ;; eval: (when (require 'rainbow-mode nil t) (rainbow-mode 1))
 ;; End:
 
-;;; monokai-2-theme.el ends here
+;;; monokai-alt-theme.el ends here
