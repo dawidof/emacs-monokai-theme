@@ -3,8 +3,8 @@
 ;; Copyright (C) 2017, Dmytro Koval
 
 ;; Author: Dmytro Koval
-;; https://github.com/dawidof/emacs-monokai-theme
-;; Version: 0.104
+;; URL: https://github.com/dawidof/emacs-monokai-theme
+;; Version: 0.105
 ;; Package-Requires: ((emacs "24"))
 ;; Created with emacs-theme-generator, https://github.com/mswift42/theme-creator.
 
@@ -279,7 +279,25 @@
    `(jde-java-font-lock-constant-face ((t (:foreground ,const))))
    `(jde-java-font-lock-modifier-face ((t (:foreground ,key3))))
    `(jde-jave-font-lock-protected-face ((t (:foreground ,keyword))))
-   `(jde-java-font-lock-number-face ((t (:foreground ,var))))))
+   `(jde-java-font-lock-number-face ((t (:foreground ,var))))
+
+   ;; buttons
+   '(custom-button ((t (:background "gray30" :foreground "white smoke" :box (:line-width 2 :color "gray68" :style released-button)))))
+   '(custom-button-mouse ((t (:background "gray23" :foreground "white smoke" :box (:line-width 2 :style released-button)))))
+
+   ;; window
+   '(window-divider ((t (:foreground "gray20"))))
+   '(window-divider-first-pixel ((t nil)))
+
+    ;; smerge (diff tool in files)
+    '(smerge-base ((t (:background "#24292e"))))
+    '(smerge-mine ((t (:background "#997676"))))
+    '(smerge-other ((t (:background "PaleGreen4"))))
+    '(smerge-refined-added ((t (:inherit smerge-refined-change :background "#405540"))))
+    '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "#705353"))))
+
+    '(hl-line ((t (:background "#363631"))))
+    ))
 
 
 ;;;###autoload
