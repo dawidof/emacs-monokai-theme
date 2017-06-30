@@ -124,7 +124,7 @@
    `(ido-first-match ((,class (:foreground ,keyword :bold t))))
    `(ido-only-match ((,class (:foreground ,warning))))
 
-   ;; gnus   
+   ;; gnus
    `(gnus-header-content ((,class (:foreground ,keyword))))
    `(gnus-header-from ((,class (:foreground ,var))))
    `(gnus-header-name ((,class (:foreground ,type))))
@@ -161,7 +161,7 @@
    `(undo-tree-visualizer-default-face ((,class :foreground ,fg2)))
    `(undo-tree-visualizer-unmodified-face ((,class :foreground ,var)))
    `(undo-tree-visualizer-register-face ((,class :foreground ,type)))
-   
+
    `(slime-repl-inputed-output-face ((,class (:foreground ,type))))
    `(trailing-whitespace ((,class :foreground nil :background ,warning)))
 
@@ -175,7 +175,7 @@
    `(rainbow-delimiters-depth-7-face ((,class :foreground ,type)))
    `(rainbow-delimiters-depth-8-face ((,class :foreground ,var)))
    `(rainbow-delimiters-unmatched-face ((,class :foreground ,warning)))
-   
+
    ;; magit
    `(magit-item-highlight ((,class :background ,bg3)))
    `(magit-section-heading        ((,class (:foreground ,keyword :weight bold))))
@@ -191,9 +191,16 @@
    `(magit-log-author ((,class (:foreground ,fg3))))
    `(magit-hash ((,class (:foreground ,fg2))))
    `(magit-diff-file-header ((,class (:foreground ,fg2 :background ,bg3))))
-   
+
    `(lazy-highlight ((,class (:foreground ,fg2 :background ,bg3))))
 
+   ;; realgud
+   `(realgud-overlay-arrow1
+     ((,class (:foreground "#7fff00"))))
+   `(realgud-overlay-arrow2
+     ((,class (:foreground "cyan"))))
+   `(realgud-overlay-arrow3
+      ((,class  (:foreground "#5FAFAF"))))
    ;; term
    `(term ((,class (:foreground ,fg1 :background ,bg1))))
    `(term-color-black ((,class (:foreground ,bg3 :background ,bg3))))
