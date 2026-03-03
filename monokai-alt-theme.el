@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; monokai-alt-theme.el --- Theme with a dark background. Based on sublime monokai theme.
 
 ;; Copyright (C) 2017, Dmytro Koval
@@ -28,27 +29,30 @@
 
 ;;; Code:
 
-(deftheme monokai-alt)
+(deftheme monokai-alt
+  "Monokai Alt theme Based on sublime monokai theme.")
+
 (let ((class '((class color) (min-colors 89)))
-      (fg1 "#f8f8f2")
-      (fg2 "#bdbdb1")
-      (fg3 "#ababa0")
-      (fg4 "#999990")
-      (bg1 "#262626")
-      (bg2 "#363631")
-      (bg3 "#454640")
-      (bg4 "#545550")
-      (key2 "#fd4d80")
-      (key3 "#db2765")
-      (builtin "#66d9ef")
-      (keyword "#f92672")
-      (const   "#a281ff")
-      (comment "#626262")
-      (func    "#9ce22e")
-      (str     "#e6db74")
-      (type    "#9ce22e")
-      (var     "#f92672")
-      (warning "#ff0000"))
+      (fg1     "#f8f8f2")  ;; GhostWhite
+      (fg2     "#bdbdb1")  ;; DarkGray
+      (fg3     "#ababa0")  ;; LightSlateGray (approx)
+      (fg4     "#999990")  ;; Gray (approx)
+      (bg1     "#262626")  ;; gray15
+      (bg2     "#363631")  ;; gray21 / DarkOliveGray (approx)
+      (bg3     "#454640")  ;; DarkSlateGray (approx)
+      (bg4     "#545550")  ;; DimGray (approx)
+      (key2    "#fd4d80")  ;; HotPink (approx)
+      (key3    "#db2765")  ;; DeepPink (approx)
+      (builtin "#66d9ef")  ;; MediumTurquoise
+      (keyword "#f92672")  ;; DeepPink
+      (const   "#a281ff")  ;; MediumPurple (approx)
+      (comment "#626262")  ;; DimGray
+      (func    "#9ce22e")  ;; YellowGreen
+      (str     "#e6db74")  ;; Khaki
+      (type    "#9ce22e")  ;; YellowGreen
+      (var     "#f92672")  ;; DeepPink
+      (warning "#ff0000")) ;; Red
+
   (custom-theme-set-faces
    'monokai-alt
    `(default ((,class (:background ,bg1 :foreground ,fg1))))
@@ -59,7 +63,7 @@
    `(font-lock-constant-face ((,class (:foreground ,const))))
    `(font-lock-doc-face ((,class (:foreground ,comment))))
    `(font-lock-function-name-face ((,class (:foreground ,func :bold t))))
-   `(font-lock-keyword-face ((,class (:bold ,class :foreground ,keyword))))
+   `(font-lock-keyword-face ((,class (:bold t :foreground ,keyword))))
    `(font-lock-string-face ((,class (:foreground ,str))))
    `(font-lock-type-face ((,class (:foreground ,type ))))
    `(font-lock-variable-name-face ((,class (:foreground ,var))))
@@ -75,7 +79,7 @@
    ;; modeline (status)
    `(mode-line ((,class (:box (:line-width 3 :color ,bg1) :bold t :foreground ,fg4 :background ,bg1))))
    `(mode-line-inactive ((,class (:box (:line-width 3 :color ,bg2) :foreground ,comment :background ,bg2 :weight normal))))
-   `(mode-line-buffer-id ((,class (:bold t :foreground ,func :background nil))))
+   `(mode-line-buffer-id ((,class (:bold t :foreground ,func :background unspecified))))
    `(mode-line-highlight ((,class (:foreground ,keyword :box nil :weight bold))))
    `(mode-line-emphasis ((,class (:foreground ,fg1))))
 
@@ -163,7 +167,7 @@
    `(undo-tree-visualizer-register-face ((,class :foreground ,type)))
 
    `(slime-repl-inputed-output-face ((,class (:foreground ,type))))
-   `(trailing-whitespace ((,class :foreground nil :background ,warning)))
+   `(trailing-whitespace ((,class :foreground unspecified :background ,warning)))
 
    ;; rainbow delimiters
    `(rainbow-delimiters-depth-1-face ((,class :foreground ,fg1)))
@@ -245,12 +249,12 @@
    ;; company
    `(company-echo-common ((,class (:foreground ,bg1 :background ,fg1))))
    `(company-preview ((,class (:background ,bg1 :foreground ,key2))))
-   `(company-preview-common ((,class (:foreground ,bg2 :foreground ,fg3))))
+   `(company-preview-common ((,class (:foreground ,fg3 :background ,bg2))))
    `(company-preview-search ((,class (:foreground ,type :background ,bg1))))
    `(company-scrollbar-bg ((,class (:background ,bg3))))
    `(company-scrollbar-fg ((,class (:foreground ,keyword))))
    `(company-tooltip ((,class (:foreground ,fg2 :background ,bg1 :bold t))))
-   `(company-tooltop-annotation ((,class (:foreground ,const))))
+   `(company-tooltip-annotation ((,class (:foreground ,const))))
    `(company-tooltip-common ((,class ( :foreground ,fg3))))
    `(company-tooltip-common-selection ((,class (:foreground ,str))))
    `(company-tooltip-mouse ((,class (:inherit highlight))))
@@ -259,17 +263,17 @@
 
 
    ;; web-mode
-   `(web-mode-builtin-face ((,class (:inherit ,font-lock-builtin-face))))
-   `(web-mode-comment-face ((,class (:inherit ,font-lock-comment-face))))
-   `(web-mode-constant-face ((,class (:inherit ,font-lock-constant-face))))
+   `(web-mode-builtin-face ((,class (:inherit font-lock-builtin-face))))
+   `(web-mode-comment-face ((,class (:inherit font-lock-comment-face))))
+   `(web-mode-constant-face ((,class (:inherit font-lock-constant-face))))
    `(web-mode-keyword-face ((,class (:foreground ,keyword))))
-   `(web-mode-doctype-face ((,class (:inherit ,font-lock-comment-face))))
-   `(web-mode-function-name-face ((,class (:inherit ,font-lock-function-name-face))))
+   `(web-mode-doctype-face ((,class (:inherit font-lock-comment-face))))
+   `(web-mode-function-name-face ((,class (:inherit font-lock-function-name-face))))
    `(web-mode-string-face ((,class (:foreground ,str))))
-   `(web-mode-type-face ((,class (:inherit ,font-lock-type-face))))
+   `(web-mode-type-face ((,class (:inherit font-lock-type-face))))
    `(web-mode-html-attr-name-face ((,class (:foreground ,func))))
    `(web-mode-html-attr-value-face ((,class (:foreground ,keyword))))
-   `(web-mode-warning-face ((,class (:inherit ,font-lock-warning-face))))
+   `(web-mode-warning-face ((,class (:inherit font-lock-warning-face))))
    `(web-mode-html-tag-face ((,class (:foreground ,builtin))))
 
    ;; linum
@@ -302,8 +306,6 @@
     '(smerge-other ((t (:background "PaleGreen4"))))
     '(smerge-refined-added ((t (:inherit smerge-refined-change :background "#405540"))))
     '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "#705353"))))
-
-    '(hl-line ((t (:background "#363631"))))
     ))
 
 
@@ -317,7 +319,6 @@
 (provide-theme 'monokai-alt)
 
 ;; Local Variables:
-;; no-byte-compile: t
 ;; fill-column: 120
 ;; End:
 
