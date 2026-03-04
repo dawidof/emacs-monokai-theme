@@ -320,6 +320,7 @@
 
 ;; Local Variables:
 ;; fill-column: 120
+;; no-byte-compile: t
 ;; End:
 
 ;;; monokai-alt-theme.el ends here
